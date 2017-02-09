@@ -1,8 +1,13 @@
-// Tell jQuery to give up the dollar sign
-$.noConflict();
+$(document).ready(function() {
+	$('#gh-form').on('submit', function(event) {
+		 var userName = $('#first-name').val();
+		  event.preventDefault();
+		 greetUser(userName);
+		});
 
-// jQuery 3.x-style ready event and locally scoped $
-jQuery(function($) {
-  $('html').removeClass('nojs');
-  $('html').addClass('hasjs');
+	function greetUser(nameholder){
+		var user=nameholder;
+		var greeting='<ul><li>Hi, '+user+'!</li><li>Thank you for signing up!</li></ul>';
+		$('#greetings').append(greeting);
+	}
 });
