@@ -8,13 +8,9 @@ jQuery(function($) {
   $('#gh-form').on('submit', function(e) {
    e.preventDefault();
    var userName = $('#name').val();
-   clearForm();
+   $('.page').css('visibility', 'hidden');
    greetUser(userName);
  });
-
-  function clearForm(){
-       ('body').removeClass('page');
-  }
 
   function greetUser(usname){
    var greeting='<ul><li>Hi, '+usname+'!</li><li>Thank you for signing up!</li></ul>';
